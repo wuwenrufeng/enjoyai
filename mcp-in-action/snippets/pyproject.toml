@@ -1,0 +1,27 @@
+[project]
+name = "snippets"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=2.13.0.2",
+    "matplotlib>=3.10.7",
+    "mcp[cli]>=1.21.1",
+    "numpy>=2.3.4",
+    "openai>=2.8.0",
+    "pandas>=2.3.3",
+    "pydantic>=2.12.4",
+    "python-dotenv>=1.2.1",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["servers", "clients"]
+
+[project.scripts]
+server = "servers:run_server"
+client = "clients:run_client"
