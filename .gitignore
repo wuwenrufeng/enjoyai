@@ -163,3 +163,5 @@ cython_debug/
 
 # VsCode
 .vscode/
+.DS_Store
+mcp-in-action/.DS_Store
