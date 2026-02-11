@@ -1,8 +1,9 @@
 # PydanticAI Agent 开发：从入门到精通
 
 > 本课程采用 "In Action" 方式组织，每个主题都通过实际项目来学习，强调动手实践而非理论讲解。
-> 
+>
 > ⚠️ **API 版本说明**：本课程基于 PydanticAI 最新版本，注意以下重要变化：
+>
 > - `result_type` → `output_type`
 > - `system_prompt` → `instructions`（推荐）
 > - `result.data` → `result.output`
@@ -22,23 +23,24 @@
 ## Part 1: 基础篇 - 构建你的第一个 Agent
 
 ### Chapter 1: Hello Agent World
+
 **项目：构建一个简单的问答助手**
 
 > 官方文档：[Agents](https://ai.pydantic.dev/agents/index.md) | [Installation](https://ai.pydantic.dev/install/index.md)
 
-- [ ] 1.1 环境搭建
+- [x] 1.1 环境搭建
   - 安装 PydanticAI：`pip install pydantic-ai`
   - 配置 LLM（支持多种模型：OpenAI、Anthropic、Google、Groq 等）
   - 理解模型字符串格式：`provider:model-name`
   - 第一个 Agent 程序
 
-- [ ] 1.2 理解 Agent 的核心组件
+- [x] 1.2 理解 Agent 的核心组件
   - Agent 是什么？
   - `instructions` 参数：静态指令 vs 动态指令
   - 三种运行方式：`run()`、`run_sync()`、`run_stream()`
   - 理解 `result.output` 的返回值
 
-- [ ] 1.3 支持的模型提供商
+- [x] 1.3 支持的模型提供商
   - OpenAI / Azure OpenAI
   - Anthropic (Claude)
   - Google (Gemini)
@@ -47,7 +49,7 @@
   - OpenRouter / Cerebras
   - 本地模型：Outlines
 
-- [ ] 1.4 实践：构建天气查询助手
+- [x] 1.4 实践：构建天气查询助手
   - 从简单对话开始
   - 添加第一个工具函数
   - 观察 Agent 的决策过程（使用 `result.all_messages()`）
@@ -57,6 +59,7 @@
 ---
 
 ### Chapter 2: 工具函数 - Agent 的手和脚
+
 **项目：ClickHouse 表结构助手**
 
 > 官方文档：[Function Tools](https://ai.pydantic.dev/tools/index.md) | [Dependencies](https://ai.pydantic.dev/dependencies/index.md)
@@ -77,12 +80,12 @@
   - `deps_type` 和 `RunContext`
   - 实践：管理数据库连接
 
-- [ ] 2.4 工具函数的高级模式
+- [x] 2.4 工具函数的高级模式
   - `Tool` 类：更精细的工具定义控制
   - 错误处理：`ModelRetry` 异常
   - 工具超时设置
 
-- [ ] 2.5 工具设计的权衡
+- [x] 2.5 工具设计的权衡
   - 细粒度 vs 通用工具
   - 安全性考虑（SQL 注入等）
   - 实践：添加 `find_tables_with_column` 工具
@@ -92,25 +95,26 @@
 ---
 
 ### Chapter 3: 高级工具特性
+
 **项目：多模态工具助手**
 
 > 官方文档：[Advanced Tool Features](https://ai.pydantic.dev/tools-advanced/index.md)
 
-- [ ] 3.1 工具返回多模态内容
+- [x] 3.1 工具返回多模态内容
   - `ImageUrl` - 返回图片
   - `DocumentUrl` - 返回文档
   - `AudioUrl` / `VideoUrl` - 返回音视频
 
-- [ ] 3.2 ToolReturn - 精细控制返回值
+- [x] 3.2 ToolReturn - 精细控制返回值
   - `return_value`：程序使用的返回值
   - `content`：提供给模型的上下文
   - `metadata`：应用元数据（类似其他框架的 "artifacts"）
 
-- [ ] 3.3 Tool.from_schema()
+- [x] 3.3 Tool.from_schema()
   - 为文档不佳的函数创建工具
   - 自定义 JSON Schema
 
-- [ ] 3.4 实践：构建文件分析助手
+- [x] 3.4 实践：构建文件分析助手
   - 返回图片预览
   - 返回文档摘要
   - 元数据追踪
@@ -120,32 +124,33 @@
 ---
 
 ### Chapter 4: 内置工具与通用工具
+
 **项目：多功能信息检索助手**
 
 > 官方文档：[Built-in Tools](https://ai.pydantic.dev/builtin-tools/index.md) | [Common Tools](https://ai.pydantic.dev/common-tools/index.md)
 
-- [ ] 4.1 WebFetchTool - 网页抓取
+- [x] 4.1 WebFetchTool - 网页抓取
   - 配置 `allowed_domains` 和 `blocked_domains`
   - `max_uses` 和 `max_content_tokens` 限制
   - 启用引用 `enable_citations`
 
-- [ ] 4.2 ImageGenerationTool - 图像生成
+- [x] 4.2 ImageGenerationTool - 图像生成
   - 与 OpenAI DALL-E 集成
   - 处理 `BinaryImage` 返回值
 
-- [ ] 4.3 MemoryTool - 对话记忆
+- [x] 4.3 MemoryTool - 对话记忆
   - 实现持久化记忆存储
   - 自定义记忆后端（数据库、云存储）
 
-- [ ] 4.4 CodeExecutionTool - 代码执行
+- [x] 4.4 CodeExecutionTool - 代码执行
   - 安全沙箱执行
   - 输入输出处理
 
-- [ ] 4.5 Common Tools - 通用工具
+- [x] 4.5 Common Tools - 通用工具
   - 预定义的常用工具集
   - 快速集成常见功能
 
-- [ ] 4.6 实践：构建多功能研究助手
+- [x] 4.6 实践：构建多功能研究助手
   - 组合多个内置工具
   - 工具选择策略
 
@@ -154,28 +159,29 @@
 ---
 
 ### Chapter 5: 多模态输入
+
 **项目：多模态内容分析助手**
 
 > 官方文档：[Image, Audio, Video & Document Input](https://ai.pydantic.dev/input/index.md)
 
-- [ ] 5.1 图片输入
+- [x] 5.1 图片输入
   - 支持的格式和大小限制
   - Base64 vs URL 输入
   - 图片描述和分析
 
-- [ ] 5.2 音频输入
+- [x] 5.2 音频输入
   - 音频转录
   - 语音理解
 
-- [ ] 5.3 视频输入
+- [x] 5.3 视频输入
   - 视频帧提取
   - 视频内容分析
 
-- [ ] 5.4 文档输入
+- [x] 5.4 文档输入
   - PDF 处理
   - 文档结构理解
 
-- [ ] 5.5 实践：构建多模态分析助手
+- [x] 5.5 实践：构建多模态分析助手
   - 图片内容识别
   - 文档信息提取
   - 音视频转录和分析
@@ -185,6 +191,7 @@
 ---
 
 ### Chapter 6: 对话管理与消息历史
+
 **项目：多轮对话的客服助手**
 
 > 官方文档：[Messages and chat history](https://ai.pydantic.dev/message-history/index.md)
@@ -193,16 +200,16 @@
   - 为什么需要 message_history？
   - 对话历史的结构：`ModelRequest`、`ModelResponse`
 
-- [ ] 6.2 实现对话记忆
+- [x] 6.2 实现对话记忆
   - 使用 `message_history` 参数
   - 从上一次运行获取：`result.all_messages()`
   - 只获取新消息：`result.new_messages()`
 
-- [ ] 6.3 上下文引用
+- [x] 6.3 上下文引用
   - "上一个"、"那个表" 的处理
   - 代词解析和指代消解
 
-- [ ] 6.4 多轮对话的设计模式
+- [x] 6.4 多轮对话的设计模式
   - 澄清型问题
   - 引导式对话
   - 任务分解
@@ -214,6 +221,7 @@
 ## Part 2: 进阶篇 - 构建生产级 Agent
 
 ### Chapter 7: 结构化输出
+
 **项目：数据提取和结构化 Agent**
 
 > 官方文档：[Output](https://ai.pydantic.dev/output/index.md)
@@ -248,6 +256,7 @@
 ---
 
 ### Chapter 8: 流式响应
+
 **项目：实时翻译和总结 Agent**
 
 - [ ] 8.1 为什么需要流式响应？
@@ -275,6 +284,7 @@
 ---
 
 ### Chapter 9: Thinking - 模型思考过程
+
 **项目：可解释的推理助手**
 
 > 官方文档：[Thinking](https://ai.pydantic.dev/thinking/index.md)
@@ -303,6 +313,7 @@
 ---
 
 ### Chapter 10: 直接模型请求
+
 **项目：灵活的模型调用系统**
 
 > 官方文档：[Direct Model Requests](https://ai.pydantic.dev/direct/index.md)
@@ -331,6 +342,7 @@
 ---
 
 ### Chapter 11: HTTP 重试与错误处理
+
 **项目：健壮的 Agent 系统**
 
 > 官方文档：[HTTP Request Retries](https://ai.pydantic.dev/retries/index.md)
@@ -362,6 +374,7 @@
 ---
 
 ### Chapter 12: Human-in-the-Loop - 工具审批机制
+
 **项目：带审批流程的自动化助手**
 
 - [ ] 12.1 为什么需要人工审批？
@@ -389,6 +402,7 @@
 ---
 
 ### Chapter 13: Agent 测试
+
 **项目：为 ClickHouse 助手编写测试**
 
 > 官方文档：[Testing](https://ai.pydantic.dev/testing/index.md)
@@ -418,6 +432,7 @@
 ---
 
 ### Chapter 14: 调试与监控
+
 **项目：可观测的 Agent 系统**
 
 > 官方文档：[Debugging & Monitoring with Pydantic Logfire](https://ai.pydantic.dev/logfire/index.md)
@@ -450,6 +465,7 @@
 ## Part 3: 高级篇 - 复杂 Agent 系统
 
 ### Chapter 15: MCP 集成 - 连接外部工具生态
+
 **项目：MCP 驱动的全能助手**
 
 > 官方文档：[MCP Overview](https://ai.pydantic.dev/mcp/overview/index.md) | [MCP Client](https://ai.pydantic.dev/mcp/client/index.md) | [MCP Server](https://ai.pydantic.dev/mcp/server/index.md)
@@ -484,6 +500,7 @@
 ---
 
 ### Chapter 16: 第三方工具集成
+
 **项目：扩展工具生态**
 
 > 官方文档：[Third-Party Tools](https://ai.pydantic.dev/third-party-tools/index.md)
@@ -512,6 +529,7 @@
 ---
 
 ### Chapter 17: Toolsets - 工具集管理
+
 **项目：动态工具管理系统**
 
 > 官方文档：[Toolsets](https://ai.pydantic.dev/toolsets/index.md) | [Deferred Tools](https://ai.pydantic.dev/deferred-tools/index.md)
@@ -542,6 +560,7 @@
 ---
 
 ### Chapter 18: Embeddings - 向量嵌入
+
 **项目：语义搜索系统**
 
 > 官方文档：[Embeddings](https://ai.pydantic.dev/embeddings/index.md)
@@ -571,6 +590,7 @@
 ---
 
 ### Chapter 19: Pydantic Graph - 工作流图
+
 **项目：复杂工作流编排系统**
 
 > 官方文档：[Graph Overview](https://ai.pydantic.dev/graph/index.md)
@@ -610,6 +630,7 @@
 ---
 
 ### Chapter 20: 多 Agent 协作与 A2A
+
 **项目：复杂任务的 Agent 团队**
 
 > 官方文档：[Multi-Agent Patterns](https://ai.pydantic.dev/multi-agent-applications/index.md) | [Agent2Agent (A2A)](https://ai.pydantic.dev/a2a/index.md)
@@ -644,6 +665,7 @@
 ---
 
 ### Chapter 21: Durable Execution - 持久化执行
+
 **项目：可恢复的长任务 Agent**
 
 > 官方文档：[Durable Execution Overview](https://ai.pydantic.dev/durable_execution/overview/index.md) | [DBOS](https://ai.pydantic.dev/durable_execution/dbos/index.md) | [Prefect](https://ai.pydantic.dev/durable_execution/prefect/index.md) | [Temporal](https://ai.pydantic.dev/durable_execution/temporal/index.md)
@@ -678,6 +700,7 @@
 ---
 
 ### Chapter 22: UI Event Streams - 前端集成
+
 **项目：实时交互的 Web Agent**
 
 > 官方文档：[UI Overview](https://ai.pydantic.dev/ui/overview/index.md) | [AG-UI](https://ai.pydantic.dev/ui/ag-ui/index.md) | [Vercel AI](https://ai.pydantic.dev/ui/vercel-ai/index.md)
@@ -707,6 +730,7 @@
 ---
 
 ### Chapter 23: Pydantic Evals - Agent 评估
+
 **项目：Agent 性能评估系统**
 
 > 官方文档：[Evals Overview](https://ai.pydantic.dev/evals/index.md)
@@ -746,6 +770,7 @@
 ---
 
 ### Chapter 24: Text2SQL - 智能问数系统
+
 **项目：自然语言查询数据库**
 
 > 官方示例：[SQL Generation](https://ai.pydantic.dev/examples/sql-gen/index.md)
@@ -780,6 +805,7 @@
 ---
 
 ### Chapter 25: RAG - 为 Agent 赋予领域知识
+
 **项目：企业知识库问答系统**
 
 > 官方示例：[RAG](https://ai.pydantic.dev/examples/rag/index.md)
@@ -809,6 +835,7 @@
 ---
 
 ### Chapter 26: Agent 的提示工程
+
 **项目：优化 Agent 性能**
 
 - [ ] 26.1 Instructions 设计
@@ -837,6 +864,7 @@
 ---
 
 ### Chapter 27: 部署和生产化
+
 **项目：将 Agent 部署到生产环境**
 
 > 官方示例：[Chat App with FastAPI](https://ai.pydantic.dev/examples/chat-app/index.md)
@@ -875,6 +903,7 @@
 ## Part 4: 实战篇 - 综合项目
 
 ### Chapter 28: 综合项目 1 - 游戏数据分析助手
+
 **为你的游戏数据分析工作定制**
 
 > 参考示例：[Data Analyst](https://ai.pydantic.dev/examples/data-analyst/index.md)
@@ -904,9 +933,11 @@
 ---
 
 ### Chapter 29: 综合项目 2 - 自定义项目
+
 **根据你的兴趣选择**
 
 可选方向（参考官方示例）：
+
 - [Bank Support](https://ai.pydantic.dev/examples/bank-support/index.md) - 银行客服助手
 - [Flight Booking](https://ai.pydantic.dev/examples/flight-booking/index.md) - 机票预订助手
 - [Weather Agent](https://ai.pydantic.dev/examples/weather-agent/index.md) - 天气查询助手
@@ -920,6 +951,7 @@
 ## Part 5: 命令行工具
 
 ### Chapter 30: Clai - PydanticAI CLI
+
 **快速原型和测试**
 
 > 官方文档：[Clai](https://ai.pydantic.dev/cli/index.md)
@@ -966,12 +998,12 @@
 
 从旧版本迁移时注意以下变化：
 
-| 旧 API | 新 API | 说明 |
-|--------|--------|------|
-| `result_type` | `output_type` | Agent 构造参数 |
-| `system_prompt` | `instructions` | 推荐使用新参数 |
-| `result.data` | `result.output` | 获取运行结果 |
-| `result.all_messages_json()` | `result.all_messages()` | 获取消息历史 |
+| 旧 API                       | 新 API                  | 说明           |
+| ---------------------------- | ----------------------- | -------------- |
+| `result_type`                | `output_type`           | Agent 构造参数 |
+| `system_prompt`              | `instructions`          | 推荐使用新参数 |
+| `result.data`                | `result.output`         | 获取运行结果   |
+| `result.all_messages_json()` | `result.all_messages()` | 获取消息历史   |
 
 ### Appendix C: 最佳实践清单
 

@@ -1,0 +1,168 @@
+[
+  {
+    "parts": [
+      {
+        "content": " das有哪些表",
+        "timestamp": "2026-02-04T08:04:04.986912Z",
+        "part_kind": "user-prompt"
+      }
+    ],
+    "timestamp": "2026-02-04T08:04:04.987112Z",
+    "instructions": "你是一个ClickHouse数据库查询助手",
+    "kind": "request",
+    "run_id": "6395ae5c-ef91-4766-a95d-481c10427c77",
+    "metadata": null
+  },
+  {
+    "parts": [
+      {
+        "tool_name": "list_tables",
+        "args": {
+          "database": "das"
+        },
+        "tool_call_id": "pyd_ai_81e8c700e09544a5ba5dbbcab6bf630f",
+        "id": null,
+        "provider_details": {
+          "thought_signature": "CvgEAXLI2nzIym0sXTsyKoWmt6FYrnDEZX+mGI6WEH3GqnVgzvMJCWmZISGF+MoETTM2BFHXwnzTeb83ZwBtVqIA/eTwGCX6Cs52JutJqkK6r8PIziL/J0r8+/2o6kHcIFqAz8ZUF9dffe4Ql67eRWm5y8w+gUHskK4GHPi89oLpDobwn0kkj+e7uk65dQaG+F0C1IlK2okx6tJhwO+jDmF0HaBSJPhaEleXlmIJlmmsaFN1yraCKnxyuPakm9FzucpYb0DdIqMUo0agP+YVSNfdd2XALqMEBbiwEJVnX3NP/DHIkCDKdXloeAtxboyVJVRHs/ClcxnzrtuoGQMf3+wH1WNlhx3LTOd6nsJQbZTxleP10Dc/eWvVsS43pH52PPYXoK14qorj6gjUvOP9CyNbkb9DoSUukoWi/OxTEZzphKtNRierRCT6XVAy+9GBhDrC7ii/c2pHuAy7Zy8x24hliWeLDKXHqA6bEINpdeEtdbRLZYNn5jG4Ue6+0sWoB7TG/Dm6kS8p4Q+2jkNZ6VTLz0MNY5eMfT6MVuHp4PXmFHCYe0Q/lnbVPyCW2z3raC2ePTttn8A6BW/pcK3DPhMw9sNj2JItEA2VPBfSwR6YijEUi82FGfzwvEHzl/5X0T1cTJW46QG0EWKAkFUQBcvrIWXcSeiVXo0jdu6DUbLqVB3vu+oQLtWs6GqxN0xKJo6o/ohkChGIFFGh0lSksg+nalVKnmqlYJL35fWhnyWyKozGBcOBzMwbcUJHSRS2xwPOA6BQAWVmJJfYjkqWIbFPRXC8ry13vUjpDHtNdzZqUv+55F2EU6pNvwCOU25ZiBauxZmpAnkrH+c="
+        },
+        "part_kind": "tool-call"
+      }
+    ],
+    "usage": {
+      "input_tokens": 284,
+      "cache_write_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 168,
+      "input_audio_tokens": 0,
+      "cache_audio_read_tokens": 0,
+      "output_audio_tokens": 0,
+      "details": {
+        "thoughts_tokens": 153,
+        "text_prompt_tokens": 284
+      }
+    },
+    "model_name": "gemini-2.5-pro",
+    "timestamp": "2026-02-04T08:04:09.162026Z",
+    "kind": "response",
+    "provider_name": "google-gla",
+    "provider_url": "https://generativelanguage.googleapis.com/",
+    "provider_details": {
+      "finish_reason": "STOP"
+    },
+    "provider_response_id": "df2CaeOpF4_FjuMP3I6EgQ8",
+    "finish_reason": "stop",
+    "run_id": "6395ae5c-ef91-4766-a95d-481c10427c77",
+    "metadata": null
+  },
+  {
+    "parts": [
+      {
+        "tool_name": "list_tables",
+        "content": [
+          "dist_label_group",
+          "dist_tmp_file_ids",
+          "dist_tmp_sql_res",
+          "dist_tmp_user_ids",
+          "label_group",
+          "tmp_file_ids",
+          "tmp_sql_res",
+          "tmp_user_ids"
+        ],
+        "tool_call_id": "pyd_ai_81e8c700e09544a5ba5dbbcab6bf630f",
+        "metadata": null,
+        "timestamp": "2026-02-04T08:04:09.175752Z",
+        "part_kind": "tool-return"
+      }
+    ],
+    "timestamp": "2026-02-04T08:04:09.176092Z",
+    "instructions": "你是一个ClickHouse数据库查询助手",
+    "kind": "request",
+    "run_id": "6395ae5c-ef91-4766-a95d-481c10427c77",
+    "metadata": null
+  },
+  {
+    "parts": [
+      {
+        "content": "das数据库有以下表：dist_label_group, dist_tmp_file_ids, dist_tmp_sql_res, dist_tmp_user_ids, label_group, tmp_file_ids, tmp_sql_res, tmp_user_ids",
+        "id": null,
+        "provider_details": null,
+        "part_kind": "text"
+      }
+    ],
+    "usage": {
+      "input_tokens": 374,
+      "cache_write_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 57,
+      "input_audio_tokens": 0,
+      "cache_audio_read_tokens": 0,
+      "output_audio_tokens": 0,
+      "details": {
+        "text_prompt_tokens": 374
+      }
+    },
+    "model_name": "gemini-2.5-pro",
+    "timestamp": "2026-02-04T08:04:11.006098Z",
+    "kind": "response",
+    "provider_name": "google-gla",
+    "provider_url": "https://generativelanguage.googleapis.com/",
+    "provider_details": {
+      "finish_reason": "STOP"
+    },
+    "provider_response_id": "d_2CaaGqBseOjuMP_oSJ6A8",
+    "finish_reason": "stop",
+    "run_id": "6395ae5c-ef91-4766-a95d-481c10427c77",
+    "metadata": null
+  },
+  {
+    "parts": [
+      {
+        "content": "我们之前聊了什么",
+        "timestamp": "2026-02-04T08:04:43.660127Z",
+        "part_kind": "user-prompt"
+      }
+    ],
+    "timestamp": "2026-02-04T08:04:43.660315Z",
+    "instructions": "你是一个ClickHouse数据库查询助手",
+    "kind": "request",
+    "run_id": "ab5a7ff3-1705-492f-8317-424b1d320251",
+    "metadata": null
+  },
+  {
+    "parts": [
+      {
+        "content": "我们之前聊到了`das`数据库中的表。您问我`das`有哪些表，我为您列出了该数据库中的所有表。",
+        "id": null,
+        "provider_details": {
+          "thought_signature": "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"
+        },
+        "part_kind": "text"
+      }
+    ],
+    "usage": {
+      "input_tokens": 438,
+      "cache_write_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 533,
+      "input_audio_tokens": 0,
+      "cache_audio_read_tokens": 0,
+      "output_audio_tokens": 0,
+      "details": {
+        "thoughts_tokens": 503,
+        "text_prompt_tokens": 438
+      }
+    },
+    "model_name": "gemini-2.5-pro",
+    "timestamp": "2026-02-04T08:04:50.028091Z",
+    "kind": "response",
+    "provider_name": "google-gla",
+    "provider_url": "https://generativelanguage.googleapis.com/",
+    "provider_details": {
+      "finish_reason": "STOP"
+    },
+    "provider_response_id": "of2Cab2BFfO_g8UP8P7V0AY",
+    "finish_reason": "stop",
+    "run_id": "ab5a7ff3-1705-492f-8317-424b1d320251",
+    "metadata": null
+  }
+]
