@@ -93,7 +93,7 @@ async def find_tables_with_column(
     ctx: RunContext[Config], column_name: str
 ) -> List[Table]:
     """查询包含输入的列名的表信息"""
-    if column_name.strip() == "":
+    if not column_name.strip():
         raise ModelRetry(message="列名不能为空值")
     result = await ctx.deps.ck_client.query(
         "SELECT database,table FROM system.columns WHERE name = %(name)s",

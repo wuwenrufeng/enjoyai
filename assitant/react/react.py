@@ -108,9 +108,40 @@ def query(question, max_turns=5):
             print("Observation:", observation)
             next_prompt = f"Observation: {observation}"
         else:
+            print(agent.messages)
             return
 
 
 if __name__ == "__main__":
     question = sys.argv[1:][0]
     query(question)
+
+# [
+#     {
+#         "role": "system",
+#         "content": "You run in a loop of Thought, Action, PAUSE, Observation.\nAt the end of the loop you output an Answer\nUse Thought to describe your thoughts about the question you have been asked.\nUse Action to run one of the actions available to you - then return PAUSE.\nObservation will be the result of running those actions.\n\nYour available actions are:\n\ncalculate:\ne.g. calculate: 4 * 7 / 3\nRuns a calculation and returns the number - uses Python so be sure to use floating point syntax if necessary\n\nask_fruit_unit_price:\ne.g. ask_fruit_unit_price: apple\nAsks the user for the price of a fruit\n\nExample session:\n\nQuestion: What is the unit price of apple?\nThought: I need to ask the user for the price of an apple to provide the unit price. \nAction: ask_fruit_unit_price: apple\nPAUSE\n\nYou will be called again with this:\n\nObservation: Apple unit price is 10/kg\n\nYou then output:\n\nAnswer: The unit price of apple is 10 per kg.",
+#     },
+#     {
+#         "role": "user",
+#         "content": "What is the total price of 3kg of apple and 2kg of banana?",
+#     },
+#     {
+#         "role": "assistant",
+#         "content": "Thought: I need to find the unit prices of apple and banana first, then calculate the total cost for the given quantities.  \nAction: ask_fruit_unit_price: apple  \nPAUSE",
+#     },
+#     {"role": "user", "content": "Observation: apple   unit price is 20/kg"},
+#     {
+#         "role": "assistant",
+#         "content": "Thought: Now I have the unit price for apple (20/kg). Next, I need the unit price for banana.  \nAction: ask_fruit_unit_price: banana  \nPAUSE",
+#     },
+#     {"role": "user", "content": "Observation: banana   unit price is 20/kg"},
+#     {
+#         "role": "assistant",
+#         "content": "Thought: Now I have both unit prices: apple is 20/kg and banana is 20/kg. I need to calculate the total price for 3kg of apple and 2kg of banana.  \nAction: calculate: 3 * 20 + 2 * 20  \nPAUSE",
+#     },
+#     {"role": "user", "content": "Observation: 100"},
+#     {
+#         "role": "assistant",
+#         "content": "Answer: The total price for 3kg of apple and 2kg of banana is 100.",
+#     },
+# ]
